@@ -3,9 +3,14 @@ CREATE DATABASE locations_db;
 
 USE locations_db;
 
+DROP DATABASE IF EXISTS user_db;
+CREATE DATABASE user_db;
+
+USE user_db;
+
 CREATE TABLE locations (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    location_name VARCHAR(100) NOT NULL
+    location_name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE reviews (
@@ -16,3 +21,9 @@ CREATE TABLE reviews (
     REFERENCES locations(id)
     ON DELETE SET NULL
 );
+
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_name VARCHAR(18) NOT NULL,
+    FOREIGN KEY ()
+)
