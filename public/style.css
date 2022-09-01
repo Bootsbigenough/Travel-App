@@ -1,0 +1,152 @@
+
+header{
+    background-color: #31708E;
+    margin: -10px;
+    padding: 0.1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  body{
+    background-image: url(https://wallpaperaccess.com/full/424833.jpg);
+      background-size: cover;  
+      background-repeat: no-repeat;
+    }
+
+  .login{
+    display: flex; 
+    flex-direction: row;
+  }
+
+  #loginTxt{
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    font-family: 'Oswald', sans-serif;
+  }
+
+  #username{
+    border-radius: 5px;
+    resize: horizontal;
+    width: 200px;
+    height: 40px;
+    margin: 20px 13px;
+    border-style: 1px grey;
+  }
+
+  #password{
+    border-radius: 5px;
+    resize:horizontal;
+    width: 200px;
+    height: 40px;
+    margin: 20px 13px;
+    border-style: 1px grey;
+  }
+
+  .adventure{
+    display: flex; 
+    justify-content: center;
+  }
+  
+  .share{
+    padding: 100px;
+    font-size: 60px;
+    color: white;
+    align-self: center;
+    text-align: center; 
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.52);
+    font-family: 'Oswald', sans-serif;
+  }
+  
+  span{
+    font-family: 'Lobster', cursive;
+    font-size: 95px;
+    text-align: center;
+  }
+
+  .signup{
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.52);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+  }
+
+  #firstname{
+    border-radius: 5px;
+    resize: horizontal;
+    width: 200px;
+    height: 40px;
+    margin: 20px 13px;
+    border-style: 1px grey;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #lastname{
+    border-radius: 5px;
+    resize: horizontal;
+    width: 200px;
+    height: 40px;
+    margin: 20px 13px;
+    border-style: 1px grey;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #email{
+    border-radius: 5px;
+    resize: horizontal;
+    width: 200px;
+    height: 40px;
+    margin: 20px 13px;
+    border-style: 1px grey;
+  }
+  
+  #pass{
+    border-radius: 5px;
+    resize: horizontal;
+    width: 200px;
+    height: 40px;
+    margin: 20px 13px;
+    border-style: 1px grey;
+  }
+
+  .column{
+    display: flex; 
+    flex-direction: column;
+  }
+
+  #signupBtn{
+    width: 100px;
+    height: 40px;
+    margin: 21px 13px;
+    background-color: #6a9229;
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    border-radius: 5px;
+    border-style: none;
+  }
+
+  h1 {
+    color: white;
+      font-size: 60px;
+      font-family: 'Lobster', cursive;
+      margin: 10px;
+  }
+  
+  #loginBtn{
+    width: 100px;
+    height: 40px;
+    margin: 21px 13px;
+    background-color: #3db698;
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    border-radius: 5px;
+    border-style: none;
+  }
