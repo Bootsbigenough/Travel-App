@@ -1,0 +1,72 @@
+#userBody{
+    background-image: url(https://i2.wp.com/eternalarrival.com/wp-content/uploads/2020/07/shutterstock_292137011.jpg?fit=1000%2C667&ssl=1);
+    background-size: cover;  
+    background-repeat: no-repeat;
+}
+
+#navBar{
+    position: sticky;
+    margin: -10px;
+    background-color: #31708E;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#welcome{
+    font-family: 'Lobster', cursive;
+    color: white;
+    font-size: 40px;
+}
+
+.navBtn{
+    width: 150px;
+    height: 40px;
+    margin: 21px 13px;
+    background-color: #3db698;
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+}
+
+img{
+    width: 300px;
+    margin-left: -10px;
+}
+
+#post{
+    margin: 30px;
+    display: flex; 
+    flex-direction: column;  
+}
+
+input{
+    width: 800px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 10px;
+    border-style: black solid 1px;
+}
+
+#postBtn{
+    width: 810px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #6a9229;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    color: white;
+    border-style: none;
+}
