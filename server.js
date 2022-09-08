@@ -6,19 +6,13 @@ const port = 3000;
 
 const exphbs = require("express-handlebars");
 
-app.set("view engine", "handlebars");
 
 const hbs = exphbs.create();
 
-app.engine(
-  "handlebars",
-  hbs.engine
-  // engine({
-  //   layoutsDir: __dirname + "/views/layouts",
-  // })
-);
-
 app.use(express.static("public"));
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 app.get("/", (req, res) => {
   return res.render("homepage");
