@@ -9,7 +9,7 @@ router.post("/login", async (req, res) => {
     const userData = await User.findOne({ where: { email: req.body.email } });
     if (!userData) {
       // the error message shouldn't specify if the login failed because of wrong email or password
-      res.status(404).json({ message: "Login failed. Please try again!" });
+      res.status(401).json({ message: "Login failed. Please try again!" });
       return;
     }
     // use `bcrypt.compare()` to compare the provided password and the hashed password
@@ -25,7 +25,7 @@ router.post("/login", async (req, res) => {
     // if they do match, return success message
     res.status(200).json({ message: "You are now logged in!" });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(200).json(err);
   }
 });
 

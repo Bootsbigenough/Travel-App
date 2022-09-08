@@ -1,14 +1,14 @@
 const express = require("express");
 // Import express-session
-const session = require('express-session');
-const sequalize = require('./config/connection');
+const session = require("express-session");
+const sequalize = require("./config/connection");
 const app = express();
 
 const PORT = process.env.Port || 3000;
 
 // Set up sessions
 const sess = {
-  secret: 'travel secret',
+  secret: "travel secret",
   resave: false,
   saveUninitialized: false,
 };
@@ -26,11 +26,12 @@ sequalize.sync().then(() => {
 
 app.use(express.static("public"));
 
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
-
 app.get("/", (req, res) => {
   return res.render("homepage");
 });
 
-app.listen(port, () => console.log(`App listening to port ${port} `));
+// Connect to the database before starting the Express.js server
+sequalize.sync().then(() => {
+  app.listen(PORT, () => console.log(`App listening to port ${PORT}`));
+});
+app.use(express.static("public")); 
