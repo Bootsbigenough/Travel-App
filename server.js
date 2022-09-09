@@ -1,7 +1,7 @@
 const express = require("express");
 // Import express-session
 const session = require("express-session");
-const sequalize = require("./config/connection");
+const sequelize = require("./config/connection");
 const app = express();
 
 const PORT = process.env.Port || 3000;
@@ -20,9 +20,12 @@ const exphbs = require("express-handlebars");
 
 const hbs = exphbs.create();
 
+app.set("view engine", "handlebars");
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
+
 // Connect to the database before starting the Express.js server
-sequalize.sync().then(() => {
-  app.listen(PORT, () => console.log('Now listwening'));
 
 app.use(express.static("public"));
 
@@ -31,7 +34,7 @@ app.get("/", (req, res) => {
 });
 
 // Connect to the database before starting the Express.js server
-sequalize.sync().then(() => {
+sequelize.sync().then(() => {
   app.listen(PORT, () => console.log(`App listening to port ${PORT}`));
 });
 app.use(express.static("public")); 
