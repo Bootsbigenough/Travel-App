@@ -1,4 +1,5 @@
 const express = require("express");
+const mysql = require("mysql");
 // Import express-session
 const session = require("express-session");
 const sequelize = require("./config/connection");
@@ -16,7 +17,6 @@ const sess = {
 app.use(session(sess));
 
 const exphbs = require("express-handlebars");
-
 
 const hbs = exphbs.create();
 
@@ -37,4 +37,4 @@ app.get("/", (req, res) => {
 sequelize.sync().then(() => {
   app.listen(PORT, () => console.log(`App listening to port ${PORT}`));
 });
-app.use(express.static("public")); 
+app.use(express.static("public"));
