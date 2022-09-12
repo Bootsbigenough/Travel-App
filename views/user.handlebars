@@ -1,3 +1,4 @@
+
 <body id="userBody">
   <header id="navBar">
     <nav>
@@ -17,9 +18,11 @@
   </section>
 
   <div></div>
+{{/with}}
+<script src="/assets/profile.js"></script>
 
-  <footer>
-
-  </footer>
-
+{{#if logged_in}}
+  <script src="/assets/logout.js"></script>
+  {{/if}}
 </body>
+
