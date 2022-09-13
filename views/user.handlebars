@@ -1,28 +1,31 @@
-
+{{#with user}}
 <body id="userBody">
   <header id="navBar">
     <nav>
-      <h2 id="welcome">Welcome, <span>{{user}}</span></h2>
+      <h2 id="welcome">Welcome, <span>{{firstName}}</span></h2>
 
-      <button class="postsBtn">My Posts</button>
-      <button class="wishlistBtn">My Wishlist</button>
-      <button class="logoutBtn">Log-Out</button>
-    </nav>
-  </header>
+<body id="userBody">
+    <header id="navBar">
+        <nav>
+            <h2 id="welcome">Welcome, <span>{{user}}</span></h2>
 
-  <section>
-    <div id="post">
-      <input type="text" placeholder="Share your experience..." />
-      <button id="postBtn">Post</button>
-    </div>
-  </section>
+            <button class="navBtn">My Posts</button>
+            <button class="navBtn">My Wishlist</button>
+            <button class="navBtn logout">Log-Out</button>
+        </nav>
+    </header>
 
-  <div></div>
+    <section>
+        <div id="post">
+            <input type="text" placeholder="Share your experience..."/>
+            <button id="postBtn">Post</button>
+        </div>
+    </section>
+
+</body>
 {{/with}}
 <script src="/assets/profile.js"></script>
 
 {{#if logged_in}}
   <script src="/assets/logout.js"></script>
   {{/if}}
-</body>
-

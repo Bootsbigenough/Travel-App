@@ -1,15 +1,9 @@
 const express = require("express");
-// Import express-session
-const session = require("express-session");
-const sequelize = require("./config/connection");
-const app = express();
-
 const session = require("express-session");
 const routes = require("./controllers");
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
-
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -38,8 +32,6 @@ app.set("view engine", "handlebars");
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
-
-// Connect to the database before starting the Express.js server
 
 app.use(express.static("public"));
 
