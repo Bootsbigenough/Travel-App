@@ -26,7 +26,6 @@ app.use(session(sess));
 
 const exphbs = require("express-handlebars");
 
-
 const hbs = exphbs.create();
 
 app.use(express.static("public"));
@@ -38,7 +37,7 @@ app.use(routes);
 // });
 
 // Connect to the database before starting the Express.js server
-sequalize.sync().then(() => {
+sequelize.sync().then(() => {
   app.listen(PORT, () => console.log(`App listening to port ${PORT}`));
 });
-app.use(express.static("public")); 
+app.use(express.static("public"));
