@@ -1,9 +1,5 @@
-const express = require("express");
-// Import express-session
-const session = require("express-session");
-const sequelize = require("./config/connection");
-const app = express();
 
+const express = require("express");
 const session = require("express-session");
 const routes = require("./controllers");
 
