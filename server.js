@@ -28,6 +28,11 @@ const exphbs = require("express-handlebars");
 
 const hbs = exphbs.create();
 
+app.set("view engine", "handlebars");
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
+
 app.use(express.static("public"));
 
 app.use(routes);
