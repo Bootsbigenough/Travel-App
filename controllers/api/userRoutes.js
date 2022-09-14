@@ -10,8 +10,10 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 //Create new user
-router.post("/", async (req, res) => {
+router.post("/register", async (req, res) => {
+  console.log(req.body);
   try {
     const userData = await User.create({
       firstName: req.body.firstName,
@@ -21,10 +23,10 @@ router.post("/", async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.id = userData.id;
+      req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      res.json(userData);
     });
   } catch (err) {
     res.status(400).json(err);
@@ -66,7 +68,7 @@ router.post("/login", async (req, res) => {
 });
 
 //Prevent users from accessing the home page if they are not logged in
-router.get("/user", withAuth, async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const userData = await User.findAll({
       attributes: { exclude: ["password"] },
@@ -75,7 +77,7 @@ router.get("/user", withAuth, async (req, res) => {
 
     const users = userData.map((user) => user.get({ plain: true }));
 
-    res.render("user", {
+    res.render("/", {
       users,
       //Pass the logged in flag to the template
       logged_in: req.session.logged_in,

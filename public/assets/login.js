@@ -19,6 +19,7 @@ const loginFormHandler = async (event) => {
       document.location.replace("/");
     } else if (response.statusCode === 401) {
       alert("Incorrect username or password");
+      console.log(response.body);
     } else {
       alert(response.statusText);
     }
@@ -35,9 +36,11 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector("#pass").value.trim();
 
   if (firstName && lastName && email && password) {
-    const response = await fetch("/api/users/login", {
+    const body = JSON.stringify({ firstName, lastName, email, password });
+
+    const response = await fetch("/api/users/register", {
       method: "POST",
-      body: JSON.stringify({ firstName, lastName, email, password }),
+      body: body,
       headers: { "Content-Type": "application/json" },
     });
 
@@ -51,4 +54,6 @@ const signupFormHandler = async (event) => {
 
 document.querySelector(".login").addEventListener("submit", loginFormHandler);
 
-document.querySelector(".signup").addEventListener("submit", signupFormHandler);
+document
+  .querySelector("#signupBtn")
+  .addEventListener("click", signupFormHandler);
