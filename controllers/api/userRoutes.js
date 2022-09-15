@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -38,6 +38,7 @@ router.post("/login", async (req, res) => {
   console.log();
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
+    const getPosts = await Post.findAll({ raw: true });
 
     if (!userData) {
       res
@@ -59,7 +60,10 @@ router.post("/login", async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.json({ user: userData, message: "You are now logged in!" });
+      res.json({
+        user: userData,
+        message: "You are now logged in!",
+      });
     });
   } catch (err) {
     console.log(err);

@@ -1,16 +1,9 @@
-
+{{log 'testing' posts}}
 {{#with user}}
-{{log 'this is a test' user}}
 <body id="userBody">
   <header id="navBar">
     <nav>
       <h2 id="welcome">Welcome, <span>{{firstName}}</span></h2>
-
-<body id="userBody">
-    <header id="navBar">
-        <nav>
-            <h2 id="welcome">Welcome, <span>{{user}}</span></h2>
-
             <button class="navBtn">My Posts</button>
             <button class="navBtn">My Wishlist</button>
             <button class="navBtn logout">Log-Out</button>
@@ -19,13 +12,22 @@
 
     <section>
         <div id="post">
-            <input type="text" placeholder="Share your experience..."/>
+            <input type="text" id="post-title"/>
+            <input type="text" placeholder="Share your experience..." id="post-desc"/>
             <button id="postBtn">Post</button>
         </div>
     </section>
+{{/with}}
+    <div id="post-section">
+        {{#each posts as |post|}}
+        {{log 'this is a' post}}
+        <h3>{{post.title}}</h3>
+        <p>{{post.text}}</p>
+        {{/each}}
+    </div>
 
 </body>
-{{/with}}
+
 <script src="/assets/profile.js"></script>
 
 {{#if logged_in}}
