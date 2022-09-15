@@ -49,7 +49,7 @@ body{
       to { background-position: 500px 0px; }
   }
 
-.login{
+.login-form{
   display: flex; 
   flex-direction: row;
   position: absolute; 
@@ -70,6 +70,9 @@ body{
   height: 40px;
   margin: 20px 13px;
   border-style: 1px grey;
+  cursor: pointer;
+  font-family: 'Oswald';
+  font-size: 15px;
 }
 
 #password{
@@ -79,7 +82,9 @@ body{
   height: 40px;
   margin: 20px 13px;
   border-style: 1px grey;
-
+ cursor: pointer;
+ font-family: 'Oswald';
+ font-size: 15px;
 }
 
 .adventure{
@@ -99,7 +104,7 @@ body{
   border-bottom: 2px solid white;
 }
 
-span{
+#life{
   font-family: 'Lobster', cursive;
   font-size: 95px;
   text-align: center;
@@ -113,7 +118,7 @@ span{
   display: flex; 
   justify-content: center;
   align-items: center;
-  margin: 10px;
+  margin: 5px;
 }
 
 #signupTxt{
@@ -137,6 +142,7 @@ span{
   border-style: 1px grey;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 #lastname{
@@ -148,6 +154,7 @@ span{
   border-style: 1px grey;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 #email{
@@ -157,6 +164,7 @@ span{
   height: 40px;
   margin: 20px 13px;
   border-style: 1px grey;
+  cursor: pointer;
 }
 
 #pass{
@@ -166,6 +174,7 @@ span{
   height: 40px;
   margin: 20px 13px;
   border-style: 1px grey;
+  cursor: pointer;
 }
 
 .column{
@@ -179,15 +188,17 @@ span{
 }
 
 #signupBtn{
-  width: 450px;
+  width: 30%;
   height: 40px;
   margin: 5px 1px;
+  margin-top: 10px;
   background-color: #6a9229;
   color: white;
   font-family: 'Lobster', cursive;
   font-size: 20px;
   border-radius: 5px;
   border-style: none;
+  cursor: pointer;
 }
 
 h1 {
@@ -198,7 +209,7 @@ h1 {
     margin-left: 10px;
 }
 
-#loginBtn{
+.login{
   width: 100px;
   height: 40px;
   margin: 21px 13px;
@@ -208,8 +219,13 @@ h1 {
   font-size: 20px;
   border-radius: 5px;
   border-style: none;
+  cursor: pointer;
 }
 
-
-
+@media screen and (max-width: 680px){
+  .signup{
+    display: flex;
+    flex-direction: column;
+  }
+}
 

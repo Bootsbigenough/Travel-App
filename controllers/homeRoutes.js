@@ -1,7 +1,9 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Post } = require("../models");
 
 router.get("/", async (req, res) => {
+  const getPosts = await Post.findAll({ raw: true });
+  console.log(getPosts);
   console.log("----");
   const loggedIn = req.session.logged_in;
   const userId = req.session.user_id;
@@ -14,6 +16,7 @@ router.get("/", async (req, res) => {
       user: findUser,
       logged_in: req.session.logged_in,
       user_id: req.session.user_id,
+      posts: getPosts,
     });
   } else {
     res.render("homepage", {

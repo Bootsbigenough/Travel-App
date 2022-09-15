@@ -1,44 +1,44 @@
-const newFormHandler = async (event) => {
+const newPostHandler = async (event) => {
+  const post = document.getElementById("post-desc");
   event.preventDefault();
 
-  const name = document.querySelector("#post-title").value.trim();
-  const description = document.querySelector("#post-desc").value.trim();
+  const title = document.querySelector("#post-title").value.trim();
+  const text = document.querySelector("#post-desc").value.trim();
 
-  if (name && description) {
-    const response = await fetch("/api/users/login", {
+  if (title && text) {
+    const response = await fetch("/api/posts/", {
       method: "POST",
-      body: JSON.stringify({ name, description }),
+      body: JSON.stringify({ title, text }),
       headers: {
         "Content-Type": "application/json",
       },
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      // document.location.replace("/");
+      document.location.reload();
     } else {
       alert("Failed to create post");
     }
   }
 };
 
-const delButtonHandler = async (event) => {
-  if (event.target.hasAtrribute("data-id")) {
-    const id = event.target.getAtrribute("data-id");
+// const delButtonHandler = async (event) => {
+//   if (event.target.hasAtrribute("data-id")) {
+//     const id = event.target.getAtrribute("data-id");
 
-    const response = await fetch("", {
-      method: "DELETE",
-    });
+//     const response = await fetch("", {
+//       method: "DELETE",
+//     });
 
-    if (response.ok) {
-      document.location.replace("/");
-    } else {
-      alert("Failed to delete post");
-    }
-  }
-};
+//     if (response.ok) {
+//       document.location.replace("/");
+//     } else {
+//       alert("Failed to delete post");
+//     }
+//   }
+// };
 
-document.querySelector(".new-post").addEventListener("submit", newPostHandler);
-
-document
-  .querySelector(".post-list")
-  .addEventListener("click", delButtonHandler);
+const postBtn = document.querySelector("#postBtn");
+document.querySelector("#postBtn").addEventListener("click", newPostHandler);
+console.log(postBtn);

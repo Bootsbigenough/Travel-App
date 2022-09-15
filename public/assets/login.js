@@ -52,7 +52,7 @@ const signupFormHandler = async (event) => {
   }
 };
 
-document.querySelector(".login").addEventListener("submit", loginFormHandler);
+document.querySelector(".login").addEventListener("click", loginFormHandler);
 
 document
   .querySelector("#signupBtn")
