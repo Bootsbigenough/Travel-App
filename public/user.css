@@ -6,21 +6,24 @@
 
 #navBar{
     position: sticky;
-    margin: -10px;
-    background-color: #31708E;
-}
-
-nav{
     display: flex;
+    margin: -10px;
+    background-color: #31708E;    
+    justify-content: space-between;
     flex-direction: row;
-    justify-content: space-evenly;
     align-items: center;
 }
+
 
 #welcome{
     font-family: 'Lobster', cursive;
     color: white;
     font-size: 40px;
+    margin-left: 15px;
+}
+
+span{
+    font-size: 45px;
 }
 
 .navBtn{
@@ -33,26 +36,50 @@ nav{
     font-size: 20px;
     border-radius: 5px;
     border-style: none;
+    cursor: pointer;
+}
+
+.myPosts{
+    cursor: not-allowed;
+}
+
+.myWish{
+    cursor: not-allowed;
 }
 
 section{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    border-bottom: 2px dotted white;
 }
 
-img{
-    width: 300px;
-    margin-left: -10px;
-}
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-family: 'Oswald';
+    font-size: 15px;
+  }
 
 #post{
-    margin: 30px;
+    margin: 20px;
     display: flex; 
-    flex-direction: column;  
+    flex-direction: column; 
+    width: calc(95%-65px);
 }
 
-input{
-    width: 800px;
+#post-title{
+    height: 50px;
+    margin: 10px;
+    border-radius: 10px;
+    border-style: black solid 1px;
+}
+
+
+#post-desc{
     height: 100px;
     margin: 10px;
     border-radius: 10px;
@@ -60,13 +87,42 @@ input{
 }
 
 #postBtn{
-    width: 810px;
+    width: 75%;
     height: 40px;
     margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 5px;
     background-color: #6a9229;
     font-family: 'Lobster', cursive;
     font-size: 20px;
     color: white;
     border-style: none;
+    cursor: pointer;
 }
+
+#post-section{
+    height: 150px;
+    width: calc(95%-65px);
+    background-color: #31718ec1 ;
+    border-radius: 15px;
+    margin: 30px;
+    padding: 5px
+}
+
+#title{
+    font-size: 32px;
+    font-family: 'Lobster', cursive;
+    color: white;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#text{
+    margin-left: 20px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Oswald';
+}
+

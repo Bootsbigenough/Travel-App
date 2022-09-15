@@ -2,30 +2,31 @@
 {{#with user}}
 <body id="userBody">
   <header id="navBar">
+     <h2 id="welcome">Welcome, <span>{{firstName}}</span></h2>
     <nav>
-      <h2 id="welcome">Welcome, <span>{{firstName}}</span></h2>
-            <button class="navBtn">My Posts</button>
-            <button class="navBtn">My Wishlist</button>
+            <button class="navBtn myPosts">My Posts</button>
+            <button class="navBtn myWish">My Wishlist</button>
             <button class="navBtn logout">Log-Out</button>
         </nav>
     </header>
 
     <section>
         <div id="post">
-            <input type="text" id="post-title"/>
+            <input type="text" placeholder="Give it a title!" id="post-title"/>
             <input type="text" placeholder="Share your experience..." id="post-desc"/>
-            <button id="postBtn">Post</button>
         </div>
+        <button id="postBtn">Post</button>
     </section>
 {{/with}}
-    <div id="post-section">
-        {{#each posts as |post|}}
-        {{log 'this is a' post}}
-        <h3>{{post.title}}</h3>
-        <p>{{post.text}}</p>
-        {{/each}}
-    </div>
 
+{{#each posts as |post|}}
+    <div id="post-section">
+        <div id="title-section">
+        <h3 id="title">{{post.title}}</h3>
+        </div>
+        <p id="text">{{post.text}}</p>
+    </div>
+     {{/each}} 
 </body>
 
 <script src="/assets/profile.js"></script>
