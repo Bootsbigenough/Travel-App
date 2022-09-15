@@ -1,6 +1,8 @@
 # Earth Trek
 
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+![Screen Shot 2022-09-15 at 6 41 45 PM](https://user-images.githubusercontent.com/102004484/190521257-40af5e1b-0569-4ff7-bd13-c31a8b82e8e6.png)
+![Screen Shot 2022-09-15 at 6 42 05 PM](https://user-images.githubusercontent.com/102004484/190521268-a9e0e65d-23fd-43d8-967d-b32cc7cdca19.png)
 
 ## Table of Contents
 
